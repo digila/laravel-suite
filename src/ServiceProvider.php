@@ -2,9 +2,7 @@
 
 namespace Digila\Suite;
 
-use Illuminate\Support\ServiceProvider;
-
-class ServiceProvider extends ServiceProvider
+class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Bootstrap any application services.
@@ -28,6 +26,7 @@ class ServiceProvider extends ServiceProvider
         $this->mergeConfigFrom($configPath, 'digilasuite');
         
         $this->app->bind('Digila\Suite\Generater\Snowflake', 'Digila\Suite\Services\Generater\Snowflake');
+        $this->app->bind('Digila\Suite\Generater\Code', 'Digila\Suite\Services\Generater\Code');
 
     }
 }

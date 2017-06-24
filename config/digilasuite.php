@@ -10,7 +10,7 @@ return [
      */
     'generater' => [
         'snowflake' => [
-            'epoch' => 1418801787000,
+            'epoch' => 1498058356956,
         ],
     ],
 ];
