@@ -13,14 +13,12 @@ use Illuminate\Support\Collection;
 
 class Code
 {
-    protected $latestCodes = [];
-    
     /**
      * コードの作成
      * 
      * @return string BIGINT
      */
-    public static function generate(array $config)
+    public static function generate($config)
     {
         $code = null;
         for ($i=0; $i<30; $i++) {
@@ -28,23 +26,20 @@ class Code
             foreach ($config as $key => $num) {
                 switch ($key) {
                     case 'az':
-                        $code .= collect(range('a', 'z'))->random($num)->all();
+                        $code .= collect(range('a', 'z'))->random($num)->implode('');
                         break;
                     case 'AZ':
-                        $code .= collect(range('A', 'Z'))->random($num)->all();
+                        $code .= collect(range('A', 'Z'))->random($num)->implode('');
                         break;
                     case 'num':
-                        $code .= collect(range('0', '9'))->random($num)->all();
+                        $code .= collect(range('0', '9'))->random($num)->implode('');
                         break;
                     default:
                         break;
                 }
             }
-            if (!in_array($code, $this->latestCodes)) {
-                break;
-            }
         }
-        $this->latestCodes[] = $code;
+        
         return $code;
     }
     
