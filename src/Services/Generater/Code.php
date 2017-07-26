@@ -21,22 +21,26 @@ class Code
     public static function generate($config)
     {
         $code = null;
-        for ($i=0; $i<30; $i++) {
-            $code = null;
-            foreach ($config as $key => $num) {
-                switch ($key) {
-                    case 'az':
-                        $code .= collect(range('a', 'z'))->random($num)->implode('');
-                        break;
-                    case 'AZ':
-                        $code .= collect(range('A', 'Z'))->random($num)->implode('');
-                        break;
-                    case 'num':
-                        $code .= collect(range('0', '9'))->random($num)->implode('');
-                        break;
-                    default:
-                        break;
-                }
+
+        foreach ($config as $key => $num) {
+            switch ($key) {
+                case 'az':
+                    for ($i=0;$i < $num; $i++) {
+                        $code .= collect(range('a', 'z'))->random();
+                    }
+                    break;
+                case 'AZ':
+                    for ($i=0;$i < $num; $i++) {
+                        $code .= collect(range('A', 'Z'))->random();
+                    }
+                    break;
+                case 'num':
+                    for ($i=0;$i < $num; $i++) {
+                        $code .= collect(range('0', '9'))->random();
+                    }
+                    break;
+                default:
+                    break;
             }
         }
         
