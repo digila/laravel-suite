@@ -19,7 +19,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         $configPath = __DIR__ . '/../config/digilasuite.php';
-        $this->publishes([$configPath => $this->getConfigPath()], 'config');
+        $this->publishes([$configPath => config_path('digilasuite.php')], 'config');
     }
 
     /**
@@ -34,27 +34,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
  
         $this->app->bind('Digila\Suite\Generater\Snowflake', 'Digila\Suite\Services\Generater\Snowflake');
         $this->app->bind('Digila\Suite\Generater\Code', 'Digila\Suite\Services\Generater\Code');
-
-    }
-    
-    /**
-     * Get the config path
-     *
-     * @return string
-     */
-    protected function getConfigPath()
-    {
-        return config_path('digilasuite.php');
-    }
-
-    /**
-     * Publish the config file
-     *
-     * @param  string $configPath
-     */
-    protected function publishConfig($configPath)
-    {
-        $this->publishes([$configPath => config_path('digilasuite.php')], 'config');
     }
 
 }

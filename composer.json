@@ -1,6 +1,6 @@
 {
     "name": "digila/laravel-suite",
-    "description": "Utility tools for Laravel 5.4",
+    "description": "Utility tools for Laravel 5.5",
     "keywords": ["digila", "laravel", "id", "snowflake"],
     "require": {
         "laravel/framework": ">=5.5.0"
