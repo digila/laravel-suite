@@ -3,8 +3,7 @@
     "description": "Utility tools for Laravel 5.4",
     "keywords": ["digila", "laravel", "id", "snowflake"],
     "require": {
-        "php": ">=5.6.4",
-        "laravel/framework": ">=5.4.0"
+        "laravel/framework": ">=5.5.0"
     },
     "license": "Apache-2.0",
     "authors": [
