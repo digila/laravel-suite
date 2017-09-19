@@ -8,5 +8,7 @@ Laravel 5.5以降で利用できるツール群です。
 - コードジェネレーター
 
 ## インストール
+  
+`composer require "digila/laravel-suite":"0.10.*"`
 
-composer require "digila/laravel-suite":"0.10.*"
+`php artisan vendor:publish --provider="Digila\Suite\ServiceProvider"`
