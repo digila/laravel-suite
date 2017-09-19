@@ -20,6 +20,15 @@
     "extra": {
         "branch-alias": {
             
+        },
+        "laravel": {
+            "providers": [
+                "Digila\\Suite\\ServiceProvider"
+            ],
+            "aliases": {
+                "DigilaSuite\\Snowflake": "Digila\\Suite\\Facades\\Generater\\SnowflakeFacade",
+                "DigilaSuite\\Code": "Digila\\Suite\\Facades\\Generater\\CodeFacade"
+            }
         }
     }
 }
