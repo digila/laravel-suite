@@ -2,9 +2,7 @@
     "name": "digila/laravel-suite",
     "description": "Utility tools for Laravel 5.5",
     "keywords": ["digila", "laravel", "id", "snowflake"],
-    "require": {
-        "laravel/framework": ">=5.5.0"
-    },
+    "homepage": "https://github.com/digila/laravel-suite",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -12,6 +10,9 @@
             "email": "sekotomo0727@gmail.com"
         }
     ],
+    "require": {
+        "laravel/framework": ">=5.5.0"
+    },
     "autoload": {
         "psr-4": {
             "Digila\\Suite\\": "src/"

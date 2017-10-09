@@ -6,6 +6,7 @@ Laravel 5.5以降で利用できるツール群です。
 
 - Twitter Snowflake形式のIDジェネレーター
 - コードジェネレーター
+- Laravel Collective Form の拡張 (bootstrap4-betaを使用)
 
 ## インストール
   

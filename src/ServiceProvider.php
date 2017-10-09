@@ -20,6 +20,33 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $configPath = __DIR__ . '/../config/digilasuite.php';
         $this->publishes([$configPath => config_path('digilasuite.php')], 'config');
+        
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'digilasuite');
+        
+        if (class_exists('Form')) {
+            $defaultOptions = [
+                'name', 'label', 'value', 'errors', 'need' => false,
+                'attributes' => [
+                    'colLabel' => 'col-md-2',
+                    'colInput' => 'col-md-10',
+                    'placeholder' => null,
+                    'description' => null,
+                    'options' => []
+                ]
+            ];
+            
+            \Form::component('dgText', 'digilasuite::components.form.text', $defaultOptions);
+            \Form::component('dgPassword', 'digilasuite::components.form.password', $defaultOptions);
+            \Form::component('dgTextarea', 'digilasuite::components.form.textarea', $defaultOptions);
+            \Form::component('dgSelect', 'digilasuite::components.form.select', $defaultOptions);
+            \Form::component('dgFile', 'digilasuite::components.form.file', $defaultOptions);
+            \Form::component('dgName', 'digilasuite::components.form.name', $defaultOptions);
+            \Form::component('dgDate', 'digilasuite::components.form.date', $defaultOptions);
+            \Form::component('dgDatetime', 'digilasuite::components.form.datetime', $defaultOptions);
+            \Form::component('dgBlood', 'digilasuite::components.form.blood', $defaultOptions);
+            \Form::component('dgPref', 'digilasuite::components.form.pref', $defaultOptions);
+        }
+        
     }
 
     /**
