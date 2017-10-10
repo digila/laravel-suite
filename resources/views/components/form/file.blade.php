@@ -8,9 +8,7 @@
 ?>
 
 <div class="form-group row {{ ($errors->has($name)) ? 'has-danger' : '' }}">
-    @if(empty($attributes['nolabel']))
-    <label for="{{ $name }}" class="{{ $attributes['colLabel'] or 'col-md-2' }} col-form-label"><i class="fa fa-pencil" aria-hidden="true"></i> {{ $label }} @if($need) <span class="badge badge-danger">必須</span> @endif </label>
-    @endif
+    @include('digilasuite::components.form._label')
     <div class="{{ $attributes['colInput'] or 'col-md-10' }}">
       {{ Form::file($name, $value, $inputAttribs) }}
       @foreach ($errors->get($name) as $message)

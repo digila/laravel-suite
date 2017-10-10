@@ -8,7 +8,7 @@
 ?>
 
 <div class="form-group row {{ ($errors->has($name)) ? 'has-danger' : '' }}">
-    <label for="{{ $name }}" class="{{ $attributes['colLabel'] or 'col-md-2' }} col-form-label"><i class="fa fa-pencil" aria-hidden="true"></i> {{ $label }} @if($need) <span class="badge badge-danger">必須</span> @endif </label>
+    @include('digilasuite::components.form._label')
     <div class="{{ $attributes['colInput'] or 'col-md-10' }}">
       {{ Form::textarea($name, $value, $inputAttribs) }}
       @foreach ($errors->get($name) as $message)

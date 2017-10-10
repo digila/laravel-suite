@@ -10,6 +10,6 @@ Laravel 5.5以降で利用できるツール群です。
 
 ## インストール
   
-`composer require "digila/laravel-suite":"0.10.*"`
+`composer require "digila/laravel-suite":"^1.0.0"`
 
 `php artisan vendor:publish --provider="Digila\Suite\ServiceProvider"`

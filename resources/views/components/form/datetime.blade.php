@@ -24,7 +24,7 @@
 ?>
 
 <div class="form-group row {{ ($errors->has($name) || $errors->has($name . '_year') || $errors->has($name . '_mon') || $errors->has($name . '_day') || $errors->has($name . '_hour') || $errors->has($name . '_min')) ? 'has-danger' : '' }}">
-    <label for="{{ $name }}" class="{{ $attributes['colLabel'] or 'col-md-2' }} col-form-label"><i class="fa fa-pencil" aria-hidden="true"></i> {{ $label }} @if($need) <span class="badge badge-danger">必須</span> @endif </label>
+    @include('digilasuite::components.form._label')
     <div class="{{ $attributes['colInput'] or 'col-md-10' }}">
         <div class="row">
             <div class="input-group col-md-12">
