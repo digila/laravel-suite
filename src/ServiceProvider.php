@@ -39,6 +39,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
             \Form::component('dgPassword', 'digilasuite::components.form.password', $defaultOptions);
             \Form::component('dgTextarea', 'digilasuite::components.form.textarea', $defaultOptions);
             \Form::component('dgSelect', 'digilasuite::components.form.select', $defaultOptions);
+            \Form::component('dgCheckbox', 'digilasuite::components.form.checkbox', $defaultOptions);
             \Form::component('dgFile', 'digilasuite::components.form.file', $defaultOptions);
             \Form::component('dgName', 'digilasuite::components.form.name', $defaultOptions);
             \Form::component('dgDate', 'digilasuite::components.form.date', $defaultOptions);
