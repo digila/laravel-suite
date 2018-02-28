@@ -12,17 +12,12 @@
 <div class="form-group row {{ ($errors->has($name)) ? 'has-danger' : '' }}">
     @include('digilasuite::components.form._label')
     <div class="{{ $attributes['colInput'] or 'col-md-10' }}">
-        <?php $idNum = 1; ?>
         @foreach($options as $itemValue => $itemLavel)
-        <?php
-            $checked = ($itemValue == $value) ? true : null;
-            $inputAttribs['id'] = $name . '-' . $idNum;
-        ?>
-        <div class="form-check">
-            {{ Form::checkbox($name, $itemValue, $checked, $inputAttribs) }}
-            <label class="form-check-label" for="{{ $inputAttribs['id'] }}">{{ $itemLavel }}</label>
+        <?php $checked = ($itemValue == $value) ? true : null;  ?>
+        <div class="form-check form-check-inline">
+            {{ Form::checkbox($name . '[]', $itemValue, $checked, $inputAttribs) }}
+            <label class="form-check-label">{{ $itemLavel }}</label>
         </div>
-        @break
         @endforeach
       @foreach ($errors->get($name) as $message)
       <div class="form-control-feedback">{{ $message }}</div>
